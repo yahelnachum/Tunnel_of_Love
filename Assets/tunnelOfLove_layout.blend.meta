@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 2690fa6f3cf0a474cb814929b813d94d
+timeCreated: 1493910764
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: boarding
+    100002: boat
+    100004: heart_entering
+    100006: heart_entering_001
+    100008: heart_entering_003
+    100010: heart_entering_004
+    100012: heart_entering_006
+    100014: heart_entering_009
+    100016: heart_entering_010
+    100018: heart_entering_013
+    100020: heart_entering_014
+    100022: heart_entering_015
+    100024: heart_entering_016
+    100026: heart_entering_017
+    100028: heart_exiting
+    100030: heart_straight
+    100032: heart_straight_001
+    100034: heart_straight_002
+    100036: heart_straight_003
+    100038: Plane
+    100040: //RootNode
+    400000: boarding
+    400002: boat
+    400004: heart_entering
+    400006: heart_entering_001
+    400008: heart_entering_003
+    400010: heart_entering_004
+    400012: heart_entering_006
+    400014: heart_entering_009
+    400016: heart_entering_010
+    400018: heart_entering_013
+    400020: heart_entering_014
+    400022: heart_entering_015
+    400024: heart_entering_016
+    400026: heart_entering_017
+    400028: heart_exiting
+    400030: heart_straight
+    400032: heart_straight_001
+    400034: heart_straight_002
+    400036: heart_straight_003
+    400038: Plane
+    400040: //RootNode
+    2300000: boarding
+    2300002: boat
+    2300004: heart_entering
+    2300006: heart_entering_001
+    2300008: heart_entering_003
+    2300010: heart_entering_004
+    2300012: heart_entering_006
+    2300014: heart_entering_009
+    2300016: heart_entering_010
+    2300018: heart_entering_013
+    2300020: heart_entering_014
+    2300022: heart_entering_015
+    2300024: heart_entering_016
+    2300026: heart_entering_017
+    2300028: heart_exiting
+    2300030: heart_straight
+    2300032: heart_straight_001
+    2300034: heart_straight_002
+    2300036: heart_straight_003
+    2300038: Plane
+    3300000: boarding
+    3300002: boat
+    3300004: heart_entering
+    3300006: heart_entering_001
+    3300008: heart_entering_003
+    3300010: heart_entering_004
+    3300012: heart_entering_006
+    3300014: heart_entering_009
+    3300016: heart_entering_010
+    3300018: heart_entering_013
+    3300020: heart_entering_014
+    3300022: heart_entering_015
+    3300024: heart_entering_016
+    3300026: heart_entering_017
+    3300028: heart_exiting
+    3300030: heart_straight
+    3300032: heart_straight_001
+    3300034: heart_straight_002
+    3300036: heart_straight_003
+    3300038: Plane
+    4300000: Plane
+    4300002: heart_straight_003
+    4300004: heart_entering_001
+    4300006: heart_entering_017
+    4300008: heart_entering_016
+    4300010: heart_entering_015
+    4300012: heart_entering_014
+    4300014: heart_entering_013
+    4300016: heart_entering_010
+    4300018: heart_entering_009
+    4300020: heart_entering_006
+    4300022: heart_straight_002
+    4300024: heart_entering_004
+    4300026: heart_entering_003
+    4300028: heart_straight_001
+    4300030: heart_straight
+    4300032: heart_exiting
+    4300034: boarding
+    4300036: boat
+    4300038: heart_entering
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

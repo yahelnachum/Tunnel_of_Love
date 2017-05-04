@@ -18,11 +18,11 @@ public class CameraMouseLook : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		var md = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
-		md = Vector2.Scale (md, new Vector2 (sensitivity * smoothing, sensitivity * smoothing));
+		var mouseDelta = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
+		mouseDelta = Vector2.Scale (mouseDelta, new Vector2 (sensitivity * smoothing, sensitivity * smoothing));
 
-		smoothV.x = Mathf.Lerp (smoothV.x, md.x, 1f / smoothing);
-		smoothV.y = Mathf.Lerp (smoothV.y, md.y, 1f / smoothing);
+		smoothV.x = Mathf.Lerp (smoothV.x, mouseDelta.x, 1f / smoothing);
+		smoothV.y = Mathf.Lerp (smoothV.y, mouseDelta.y, 1f / smoothing);
 
 		mouseLook += smoothV;
 
