@@ -10,23 +10,60 @@ public class MarkerManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GameObject root = GameObject.Find ("tunnelOfLove_layout");
-		List<GameObject> markers = getMarkers (root);
+		markers = getMarkers (root);
 		markers = orderMarkers (markers);
 		drawPath (markers);
 	}
-	
+
+	private static int frameCounter = 0;
+	private static GameObject nextMarker = null;
+	private static GameObject previousMarker = null;
 	// Update is called once per frame
 	void Update () {
+		if (nextMarker == null || previousMarker == null) {
+			previousMarker = getNextMarker ();
+			nextMarker = getNextMarker();
+		}
 
+		if(frameCounter % 30 == 0){
+			previousMarker = nextMarker;
+			nextMarker = getNextMarker();
+		}
+
+		float interpolation = (frameCounter % 30) / 30f;
+		GameObject boat = GameObject.Find ("boat");
+		boat.transform.position = previousMarker.transform.position * (1f - interpolation) + 
+								  nextMarker.transform.position * interpolation;
+
+
+		frameCounter++;
+	}
+
+	private static int counter = 0;
+	public GameObject getNextMarker(){
+		if (markers.Count > 0) {
+
+			GameObject currentMarker = markers [counter % markers.Count];
+			counter++;
+
+			return currentMarker;
+		}
+
+		return null;
 	}
 
 	private void drawArrowDebug(Vector3 startPosition, Vector3 endPosition){
 		Debug.DrawLine (startPosition, endPosition, Color.red, float.MaxValue );
-		//Vector3 arrowHead01 = 
+		Vector3 arrowReverseDirection = (startPosition - endPosition).normalized;
+		Vector3 arrowHead01 = Quaternion.Euler (0f, 30f, 0f) * arrowReverseDirection; 
+		Vector3 arrowHead02 = Quaternion.Euler (0f, -30f, 0f) * arrowReverseDirection;
+		Debug.DrawLine (endPosition, endPosition + arrowHead01, Color.red, float.MaxValue );
+		Debug.DrawLine (endPosition, endPosition + arrowHead02, Color.red, float.MaxValue );
 		//Debug.DrawLine (startPosition, endPosition, Color.red, float.MaxValue );
 	}
 
 	private void drawPath(List<GameObject> markers){
+		Debug.Log (markers.Count);
 		for (int i = 1; i < markers.Count; i++) {
 			drawArrowDebug (markers [i - 1].transform.position, markers [i].transform.position);
 		}
