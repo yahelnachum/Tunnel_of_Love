@@ -18,23 +18,38 @@ public class MarkerManager : MonoBehaviour {
 	private static int frameCounter = 0;
 	private static GameObject nextMarker = null;
 	private static GameObject previousMarker = null;
+	private const float speed = 0.1f;
 	// Update is called once per frame
 	void Update () {
+
+		GameObject boat = GameObject.Find ("boat");
+
 		if (nextMarker == null || previousMarker == null) {
 			previousMarker = getNextMarker ();
 			nextMarker = getNextMarker();
+
+			boat.transform.position = previousMarker.transform.position;
+
 		}
 
-		if(frameCounter % 30 == 0){
+		Vector3 newBoatPosition = boat.transform.position + (nextMarker.transform.position - previousMarker.transform.position).normalized * speed;
+
+		float interpolation = Vector3.Distance (newBoatPosition, previousMarker.transform.position) / Vector3.Distance (nextMarker.transform.position, previousMarker.transform.position);
+
+		while (interpolation > 1f) {
 			previousMarker = nextMarker;
-			nextMarker = getNextMarker();
+			nextMarker = getNextMarker ();
+
+			float newSpeed = Vector3.Distance (newBoatPosition, previousMarker.transform.position);
+			newBoatPosition = previousMarker.transform.position + (nextMarker.transform.position - previousMarker.transform.position).normalized * newSpeed;
+
+			interpolation = Vector3.Distance (newBoatPosition, previousMarker.transform.position) / Vector3.Distance (nextMarker.transform.position, previousMarker.transform.position);
 		}
 
-		float interpolation = (frameCounter % 30) / 30f;
-		GameObject boat = GameObject.Find ("boat");
-		boat.transform.position = previousMarker.transform.position * (1f - interpolation) + 
-								  nextMarker.transform.position * interpolation;
+		Quaternion newBoatRotation = Quaternion.Slerp(previousMarker.transform.rotation, nextMarker.transform.rotation, interpolation);
 
+		boat.transform.position = newBoatPosition;
+		boat.transform.rotation = newBoatRotation;
 
 		frameCounter++;
 	}
@@ -76,7 +91,7 @@ public class MarkerManager : MonoBehaviour {
 	private int findIndexOfFirstMarker(List<GameObject> markers){
 		int index = 0;
 		for (int i = 0; i < markers.Count; i++) {
-			if (markers [i].name.Equals ("heart_ride_marker_0001")) {
+			if (markers [i].name.Equals (firstMarkerName)) {
 				index = i;
 				break;
 			}
