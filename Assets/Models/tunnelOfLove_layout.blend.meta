@@ -76,6 +76,37 @@ ModelImporter:
     100136: heart_ride_marker_032
     100138: heart_ride_marker_033
     100140: heart_ride_marker_034
+    100142: heart_ride_000
+    100144: heart_ride_004
+    100146: heart_ride_005
+    100148: heart_ride_006
+    100150: heart_ride_007
+    100152: heart_ride_008
+    100154: heart_ride_009
+    100156: heart_ride_010
+    100158: heart_ride_011
+    100160: heart_ride_012
+    100162: heart_ride_013
+    100164: heart_ride_014
+    100166: heart_ride_marker_000
+    100168: heart_ride_marker_004
+    100170: heart_ride_marker_005
+    100172: heart_ride_marker_006
+    100174: heart_ride_marker_007
+    100176: heart_ride_marker_008
+    100178: heart_ride_marker_009
+    100180: heart_ride_marker_010
+    100182: heart_ride_marker_011
+    100184: heart_ride_marker_012
+    100186: heart_ride_marker_013
+    100188: heart_ride_marker_014
+    100190: heart_ride_marker_015
+    100192: heart_ride_marker_016
+    100194: heart_ride_marker_017
+    100196: heart_ride_marker_018
+    100198: heart_ride_marker_019
+    100200: heart_ride_002
+    100202: heart_ride_marker_002
     400000: boarding
     400002: boat
     400004: heart_entering
@@ -147,6 +178,37 @@ ModelImporter:
     400136: heart_ride_marker_032
     400138: heart_ride_marker_033
     400140: heart_ride_marker_034
+    400142: heart_ride_000
+    400144: heart_ride_004
+    400146: heart_ride_005
+    400148: heart_ride_006
+    400150: heart_ride_007
+    400152: heart_ride_008
+    400154: heart_ride_009
+    400156: heart_ride_010
+    400158: heart_ride_011
+    400160: heart_ride_012
+    400162: heart_ride_013
+    400164: heart_ride_014
+    400166: heart_ride_marker_000
+    400168: heart_ride_marker_004
+    400170: heart_ride_marker_005
+    400172: heart_ride_marker_006
+    400174: heart_ride_marker_007
+    400176: heart_ride_marker_008
+    400178: heart_ride_marker_009
+    400180: heart_ride_marker_010
+    400182: heart_ride_marker_011
+    400184: heart_ride_marker_012
+    400186: heart_ride_marker_013
+    400188: heart_ride_marker_014
+    400190: heart_ride_marker_015
+    400192: heart_ride_marker_016
+    400194: heart_ride_marker_017
+    400196: heart_ride_marker_018
+    400198: heart_ride_marker_019
+    400200: heart_ride_002
+    400202: heart_ride_marker_002
     2300000: boarding
     2300002: boat
     2300004: heart_entering
@@ -217,6 +279,37 @@ ModelImporter:
     2300134: heart_ride_marker_032
     2300136: heart_ride_marker_033
     2300138: heart_ride_marker_034
+    2300140: heart_ride_000
+    2300142: heart_ride_004
+    2300144: heart_ride_005
+    2300146: heart_ride_006
+    2300148: heart_ride_007
+    2300150: heart_ride_008
+    2300152: heart_ride_009
+    2300154: heart_ride_010
+    2300156: heart_ride_011
+    2300158: heart_ride_012
+    2300160: heart_ride_013
+    2300162: heart_ride_014
+    2300164: heart_ride_marker_000
+    2300166: heart_ride_marker_004
+    2300168: heart_ride_marker_005
+    2300170: heart_ride_marker_006
+    2300172: heart_ride_marker_007
+    2300174: heart_ride_marker_008
+    2300176: heart_ride_marker_009
+    2300178: heart_ride_marker_010
+    2300180: heart_ride_marker_011
+    2300182: heart_ride_marker_012
+    2300184: heart_ride_marker_013
+    2300186: heart_ride_marker_014
+    2300188: heart_ride_marker_015
+    2300190: heart_ride_marker_016
+    2300192: heart_ride_marker_017
+    2300194: heart_ride_marker_018
+    2300196: heart_ride_marker_019
+    2300198: heart_ride_002
+    2300200: heart_ride_marker_002
     3300000: boarding
     3300002: boat
     3300004: heart_entering
@@ -287,6 +380,37 @@ ModelImporter:
     3300134: heart_ride_marker_032
     3300136: heart_ride_marker_033
     3300138: heart_ride_marker_034
+    3300140: heart_ride_000
+    3300142: heart_ride_004
+    3300144: heart_ride_005
+    3300146: heart_ride_006
+    3300148: heart_ride_007
+    3300150: heart_ride_008
+    3300152: heart_ride_009
+    3300154: heart_ride_010
+    3300156: heart_ride_011
+    3300158: heart_ride_012
+    3300160: heart_ride_013
+    3300162: heart_ride_014
+    3300164: heart_ride_marker_000
+    3300166: heart_ride_marker_004
+    3300168: heart_ride_marker_005
+    3300170: heart_ride_marker_006
+    3300172: heart_ride_marker_007
+    3300174: heart_ride_marker_008
+    3300176: heart_ride_marker_009
+    3300178: heart_ride_marker_010
+    3300180: heart_ride_marker_011
+    3300182: heart_ride_marker_012
+    3300184: heart_ride_marker_013
+    3300186: heart_ride_marker_014
+    3300188: heart_ride_marker_015
+    3300190: heart_ride_marker_016
+    3300192: heart_ride_marker_017
+    3300194: heart_ride_marker_018
+    3300196: heart_ride_marker_019
+    3300198: heart_ride_002
+    3300200: heart_ride_marker_002
     4300000: Plane
     4300002: heart_straight_003
     4300004: heart_entering_001
@@ -357,6 +481,37 @@ ModelImporter:
     4300134: heart_ride_marker_0003
     4300136: heart_ride_0001
     4300138: heart_ride_marker_0001
+    4300140: heart_ride_014
+    4300142: heart_ride_008
+    4300144: heart_ride_marker_018
+    4300146: heart_ride_013
+    4300148: heart_ride_012
+    4300150: heart_ride_011
+    4300152: heart_ride_010
+    4300154: heart_ride_009
+    4300156: heart_ride_marker_019
+    4300158: heart_ride_007
+    4300160: heart_ride_marker_017
+    4300162: heart_ride_006
+    4300164: heart_ride_marker_016
+    4300166: heart_ride_005
+    4300168: heart_ride_marker_015
+    4300170: heart_ride_004
+    4300172: heart_ride_marker_014
+    4300174: heart_ride_000
+    4300176: heart_ride_marker_013
+    4300178: heart_ride_marker_012
+    4300180: heart_ride_marker_011
+    4300182: heart_ride_marker_010
+    4300184: heart_ride_marker_009
+    4300186: heart_ride_marker_008
+    4300188: heart_ride_marker_007
+    4300190: heart_ride_marker_006
+    4300192: heart_ride_marker_005
+    4300194: heart_ride_marker_004
+    4300196: heart_ride_marker_000
+    4300198: heart_ride_002
+    4300200: heart_ride_marker_002
     7400000: Default Take
     9500000: //RootNode
   materials:

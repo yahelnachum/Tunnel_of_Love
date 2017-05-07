@@ -14,44 +14,10 @@ public class MarkerManager : MonoBehaviour {
 		markers = orderMarkers (markers);
 		drawPath (markers);
 	}
-
-	private static int frameCounter = 0;
-	private static GameObject nextMarker = null;
-	private static GameObject previousMarker = null;
-	private const float speed = 0.1f;
+		
 	// Update is called once per frame
 	void Update () {
-
-		GameObject boat = GameObject.Find ("boat");
-
-		if (nextMarker == null || previousMarker == null) {
-			previousMarker = getNextMarker ();
-			nextMarker = getNextMarker();
-
-			boat.transform.position = previousMarker.transform.position;
-
-		}
-
-		Vector3 newBoatPosition = boat.transform.position + (nextMarker.transform.position - previousMarker.transform.position).normalized * speed;
-
-		float interpolation = Vector3.Distance (newBoatPosition, previousMarker.transform.position) / Vector3.Distance (nextMarker.transform.position, previousMarker.transform.position);
-
-		while (interpolation > 1f) {
-			previousMarker = nextMarker;
-			nextMarker = getNextMarker ();
-
-			float newSpeed = Vector3.Distance (newBoatPosition, previousMarker.transform.position);
-			newBoatPosition = previousMarker.transform.position + (nextMarker.transform.position - previousMarker.transform.position).normalized * newSpeed;
-
-			interpolation = Vector3.Distance (newBoatPosition, previousMarker.transform.position) / Vector3.Distance (nextMarker.transform.position, previousMarker.transform.position);
-		}
-
-		Quaternion newBoatRotation = Quaternion.Slerp(previousMarker.transform.rotation, nextMarker.transform.rotation, interpolation);
-
-		boat.transform.position = newBoatPosition;
-		boat.transform.rotation = newBoatRotation;
-
-		frameCounter++;
+		
 	}
 
 	private static int counter = 0;
