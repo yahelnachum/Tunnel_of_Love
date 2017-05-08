@@ -4,6 +4,7 @@ using System.Collections;
 public class Boat : MonoBehaviour {
 
 	MarkerManager manager;
+	GameObject rider;
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +14,9 @@ public class Boat : MonoBehaviour {
 
 	private static GameObject nextMarker = null;
 	private static GameObject previousMarker = null;
-	private const float speed = 0.01f;
+	private const float speed = 0.1f;
 	private bool move = false;
+	private bool beforeHalfway = true;
 	// Update is called once per frame
 	void Update () {
 		if (move) {
@@ -44,11 +46,24 @@ public class Boat : MonoBehaviour {
 
 			transform.position = newBoatPosition;
 			transform.rotation = newBoatRotation;
+
+			if (beforeHalfway && previousMarker.name.Equals("heart_ride_marker_035")) {
+				move = false;
+				beforeHalfway = false;
+
+				rider.transform.SetParent (null);
+				rider.transform.position = this.transform.position + new Vector3 (-2f, 1f, 0f);
+				PlayerController playerController = rider.GetComponent<PlayerController> ();
+				playerController.setInBoat (false);
+			}
 		}
 	}
 
-	public void startRide(){
-		Debug.Log ("starting ride");
-		move = true;
+	public void setMove(bool move){
+		this.move = move;
+	}
+
+	public void setRider(GameObject rider){
+		this.rider = rider;
 	}
 }

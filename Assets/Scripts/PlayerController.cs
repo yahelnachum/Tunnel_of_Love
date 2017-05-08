@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour {
 	public float mouseSensitivity = 5.0f;
 	public float mouseSmoothing = 2.0f;
 
-	GameObject boat = null;
 	// Use this for initialization
 	void Start () {
 		Cursor.lockState = CursorLockMode.Locked;
@@ -23,40 +22,46 @@ public class PlayerController : MonoBehaviour {
 			Debug.Log ("boat != null");
 		} else {
 			Debug.Log ("boat == null");
-			playerMovement ();
+			playerMovement_ForwardBackward ();
+			playerMovement_StraffeLeftRight ();
 		}
 
-		playerCamera ();
+		playerCamera_LeftRight ();
+		playerCamera_UpDown ();
 
 		if (Input.GetKeyDown ("escape"))
 			Cursor.lockState = CursorLockMode.None;
 	}
 
-	private void playerMovement(){
+	private void playerMovement_ForwardBackward(){
+
 		float translation = Input.GetAxis ("Vertical") * movementSpeed;
-		float straffe = Input.GetAxis ("Horizontal") * movementSpeed;
 
 		translation *= Time.deltaTime;
-		straffe *= Time.deltaTime;
-
-		transform.Translate (straffe, 0, translation);
+		transform.Translate (0f, 0f, translation);
 	}
 
-	Vector2 angle = new Vector2(0f,0f);
+	private void playerMovement_StraffeLeftRight(){
 
-	private void playerCamera(){
-		Vector2 mouseDelta = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
-		mouseDelta = Vector2.Scale (mouseDelta, new Vector2 (mouseSensitivity * mouseSmoothing, mouseSensitivity * mouseSmoothing));
+		float straffe = Input.GetAxis ("Horizontal") * movementSpeed;
 
-		smoothV.x = Mathf.Lerp (smoothV.x, mouseDelta.x, 1f / mouseSmoothing);
-		smoothV.y = Mathf.Lerp (smoothV.y, mouseDelta.y, 1f / mouseSmoothing);
+		straffe *= Time.deltaTime;
+		transform.Translate (straffe, 0f, 0f);
+	}
 
-		mouseLook += smoothV;
+	float cameraAngle_UpDown = 0f;
+	float CAMERA_ANGLE_UP_DOWN_LIMIT = 90f;
+	private void playerCamera_UpDown(){
+		cameraAngle_UpDown += Input.GetAxisRaw ("Mouse Y") * mouseSensitivity;
+		cameraAngle_UpDown = Mathf.Clamp (cameraAngle_UpDown, -CAMERA_ANGLE_UP_DOWN_LIMIT, CAMERA_ANGLE_UP_DOWN_LIMIT);
+		transform.GetChild(0).transform.localRotation = Quaternion.AngleAxis (-cameraAngle_UpDown, Vector3.right);
+	}
 
-		angle += mouseDelta;
+	float cameraAngle_LeftRight = 0f;
 
-		transform.GetChild(0).transform.localRotation = Quaternion.AngleAxis (-angle.y, Vector3.right);
-		transform.localRotation = Quaternion.AngleAxis (angle.x, Vector3.up); // line that is screwing up boat stuff
+	private void playerCamera_LeftRight(){
+		cameraAngle_LeftRight += Input.GetAxisRaw ("Mouse X")  * mouseSensitivity;
+		transform.localRotation = Quaternion.AngleAxis (cameraAngle_LeftRight, Vector3.up);
 	}
 
 	bool inBoat = false;
@@ -65,10 +70,16 @@ public class PlayerController : MonoBehaviour {
 		if (inBoat == false && col.gameObject.name.Equals ("boat")) {
 			inBoat = true;
 			Debug.Log ("with boat");
-			boat = col.gameObject;
-			col.gameObject.GetComponent<Boat> ().startRide ();
-			transform.position = boat.transform.position + new Vector3(0f, 0.5f, 0f);
-			transform.SetParent (boat.transform);
+			GameObject gameObjectBoat = col.gameObject;
+			Boat scriptBoat = col.gameObject.GetComponent<Boat> ();
+			scriptBoat.setRider (this.gameObject);
+			scriptBoat.setMove (true);
+			transform.position = scriptBoat.transform.position + new Vector3(0f, 0.5f, 0f);
+			transform.SetParent (scriptBoat.transform);
 		}
+	}
+
+	public void setInBoat(bool inBoat){
+		this.inBoat = inBoat;
 	}
 }

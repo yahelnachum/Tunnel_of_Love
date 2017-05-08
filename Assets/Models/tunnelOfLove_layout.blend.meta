@@ -107,6 +107,8 @@ ModelImporter:
     100198: heart_ride_marker_019
     100200: heart_ride_002
     100202: heart_ride_marker_002
+    100204: Cube
+    100206: heart_ride_marker_035
     400000: boarding
     400002: boat
     400004: heart_entering
@@ -209,6 +211,8 @@ ModelImporter:
     400198: heart_ride_marker_019
     400200: heart_ride_002
     400202: heart_ride_marker_002
+    400204: Cube
+    400206: heart_ride_marker_035
     2300000: boarding
     2300002: boat
     2300004: heart_entering
@@ -310,6 +314,8 @@ ModelImporter:
     2300196: heart_ride_marker_019
     2300198: heart_ride_002
     2300200: heart_ride_marker_002
+    2300202: Cube
+    2300204: heart_ride_marker_035
     3300000: boarding
     3300002: boat
     3300004: heart_entering
@@ -411,6 +417,8 @@ ModelImporter:
     3300196: heart_ride_marker_019
     3300198: heart_ride_002
     3300200: heart_ride_marker_002
+    3300202: Cube
+    3300204: heart_ride_marker_035
     4300000: Plane
     4300002: heart_straight_003
     4300004: heart_entering_001
@@ -512,6 +520,8 @@ ModelImporter:
     4300196: heart_ride_marker_000
     4300198: heart_ride_002
     4300200: heart_ride_marker_002
+    4300202: Cube
+    4300204: heart_ride_marker_035
     7400000: Default Take
     9500000: //RootNode
   materials:
