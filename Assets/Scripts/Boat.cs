@@ -14,7 +14,7 @@ public class Boat : MonoBehaviour {
 
 	private static GameObject nextMarker = null;
 	private static GameObject previousMarker = null;
-	private const float speed = 0.1f;
+	private const float speed = 0.05f;
 	private bool move = false;
 	private bool beforeHalfway = true;
 	// Update is called once per frame

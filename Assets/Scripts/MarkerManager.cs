@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class MarkerManager : MonoBehaviour {
 
 	private List<GameObject> markers = null;
-	private string firstMarkerName = "heart_ride_marker_0001";
+	private string firstMarkerName = "marker_straight";
 
 	// Use this for initialization
 	void Start () {

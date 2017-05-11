@@ -71,6 +71,31 @@ ModelImporter:
     100126: straight
     100128: up_entering
     100130: up_exiting
+    100132: marker_down_entering
+    100134: marker_down_entering_001
+    100136: marker_down_entering_002
+    100138: marker_down_exiting
+    100140: marker_down_exiting_001
+    100142: marker_down_exiting_002
+    100144: marker_left
+    100146: marker_left_001
+    100148: marker_left_002
+    100150: marker_left_003
+    100152: marker_left_004
+    100154: marker_left_005
+    100156: marker_right
+    100158: marker_right_001
+    100160: marker_right_002
+    100162: marker_right_003
+    100164: marker_right_004
+    100166: marker_right_005
+    100168: marker_straight
+    100170: marker_up_entering
+    100172: marker_up_entering_001
+    100174: marker_up_entering_002
+    100176: marker_up_exiting
+    100178: marker_up_exiting_001
+    100180: marker_up_exiting_002
     400000: boarding
     400002: boat
     400004: Cube
@@ -137,6 +162,31 @@ ModelImporter:
     400126: straight
     400128: up_entering
     400130: up_exiting
+    400132: marker_down_entering
+    400134: marker_down_entering_001
+    400136: marker_down_entering_002
+    400138: marker_down_exiting
+    400140: marker_down_exiting_001
+    400142: marker_down_exiting_002
+    400144: marker_left
+    400146: marker_left_001
+    400148: marker_left_002
+    400150: marker_left_003
+    400152: marker_left_004
+    400154: marker_left_005
+    400156: marker_right
+    400158: marker_right_001
+    400160: marker_right_002
+    400162: marker_right_003
+    400164: marker_right_004
+    400166: marker_right_005
+    400168: marker_straight
+    400170: marker_up_entering
+    400172: marker_up_entering_001
+    400174: marker_up_entering_002
+    400176: marker_up_exiting
+    400178: marker_up_exiting_001
+    400180: marker_up_exiting_002
     2300000: boarding
     2300002: boat
     2300004: Cube
@@ -202,6 +252,31 @@ ModelImporter:
     2300124: straight
     2300126: up_entering
     2300128: up_exiting
+    2300130: marker_down_entering
+    2300132: marker_down_entering_001
+    2300134: marker_down_entering_002
+    2300136: marker_down_exiting
+    2300138: marker_down_exiting_001
+    2300140: marker_down_exiting_002
+    2300142: marker_left
+    2300144: marker_left_001
+    2300146: marker_left_002
+    2300148: marker_left_003
+    2300150: marker_left_004
+    2300152: marker_left_005
+    2300154: marker_right
+    2300156: marker_right_001
+    2300158: marker_right_002
+    2300160: marker_right_003
+    2300162: marker_right_004
+    2300164: marker_right_005
+    2300166: marker_straight
+    2300168: marker_up_entering
+    2300170: marker_up_entering_001
+    2300172: marker_up_entering_002
+    2300174: marker_up_exiting
+    2300176: marker_up_exiting_001
+    2300178: marker_up_exiting_002
     3300000: boarding
     3300002: boat
     3300004: Cube
@@ -267,6 +342,31 @@ ModelImporter:
     3300124: straight
     3300126: up_entering
     3300128: up_exiting
+    3300130: marker_down_entering
+    3300132: marker_down_entering_001
+    3300134: marker_down_entering_002
+    3300136: marker_down_exiting
+    3300138: marker_down_exiting_001
+    3300140: marker_down_exiting_002
+    3300142: marker_left
+    3300144: marker_left_001
+    3300146: marker_left_002
+    3300148: marker_left_003
+    3300150: marker_left_004
+    3300152: marker_left_005
+    3300154: marker_right
+    3300156: marker_right_001
+    3300158: marker_right_002
+    3300160: marker_right_003
+    3300162: marker_right_004
+    3300164: marker_right_005
+    3300166: marker_straight
+    3300168: marker_up_entering
+    3300170: marker_up_entering_001
+    3300172: marker_up_entering_002
+    3300174: marker_up_exiting
+    3300176: marker_up_exiting_001
+    3300178: marker_up_exiting_002
     4300000: Cube
     4300002: heart_ride_014
     4300004: heart_ride_marker_034
@@ -332,6 +432,31 @@ ModelImporter:
     4300124: right
     4300126: straight
     4300128: heart_opening_piece
+    4300130: marker_left_005
+    4300132: marker_left_004
+    4300134: marker_left_003
+    4300136: marker_left_002
+    4300138: marker_left_001
+    4300140: marker_left
+    4300142: marker_down_exiting
+    4300144: marker_down_exiting_001
+    4300146: marker_down_exiting_002
+    4300148: marker_up_exiting
+    4300150: marker_up_exiting_001
+    4300152: marker_up_exiting_002
+    4300154: marker_down_entering_002
+    4300156: marker_down_entering_001
+    4300158: marker_down_entering
+    4300160: marker_up_entering_002
+    4300162: marker_up_entering_001
+    4300164: marker_up_entering
+    4300166: marker_right_005
+    4300168: marker_right_004
+    4300170: marker_right_003
+    4300172: marker_right_002
+    4300174: marker_right_001
+    4300176: marker_right
+    4300178: marker_straight
     7400000: Default Take
     9500000: //RootNode
   materials:
