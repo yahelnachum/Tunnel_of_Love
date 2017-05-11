@@ -12,8 +12,8 @@ public class Boat : MonoBehaviour {
 	}
 	
 
-	private static GameObject nextMarker = null;
-	private static GameObject previousMarker = null;
+	private static Marker nextMarker = null;
+	private static Marker previousMarker = null;
 	private const float speed = 0.05f;
 	private bool move = false;
 	private bool beforeHalfway = true;
@@ -28,7 +28,7 @@ public class Boat : MonoBehaviour {
 
 			}
 
-			Vector3 newBoatPosition = transform.position + (nextMarker.transform.position - previousMarker.transform.position).normalized * speed;
+			Vector3 newBoatPosition = transform.position + (nextMarker.transform.position - previousMarker.transform.position).normalized * speed * previousMarker.getSpeed ();
 
 			float interpolation = Vector3.Distance (newBoatPosition, previousMarker.transform.position) / Vector3.Distance (nextMarker.transform.position, previousMarker.transform.position);
 

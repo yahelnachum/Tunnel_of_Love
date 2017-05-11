@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 public class MarkerManager : MonoBehaviour {
 
-	private List<GameObject> markers = null;
-	private string firstMarkerName = "marker_straight";
+	private List<Marker> markers = null;
 
 	// Use this for initialization
 	void Start () {
 		GameObject root = GameObject.Find ("tunnelOfLove_layout");
 		markers = getMarkers (root);
 		markers = orderMarkers (markers);
+		markers = calculateSpeed (markers);
 		drawPath (markers);
 	}
 		
@@ -21,10 +21,10 @@ public class MarkerManager : MonoBehaviour {
 	}
 
 	private static int counter = 0;
-	public GameObject getNextMarker(){
+	public Marker getNextMarker(){
 		if (markers.Count > 0) {
 
-			GameObject currentMarker = markers [counter % markers.Count];
+			Marker currentMarker = markers [counter % markers.Count];
 			counter++;
 
 			return currentMarker;
@@ -43,7 +43,7 @@ public class MarkerManager : MonoBehaviour {
 		//Debug.DrawLine (startPosition, endPosition, Color.red, float.MaxValue );
 	}
 
-	private void drawPath(List<GameObject> markers){
+	private void drawPath(List<Marker> markers){
 		Debug.Log (markers.Count);
 		for (int i = 1; i < markers.Count; i++) {
 			drawArrowDebug (markers [i - 1].transform.position, markers [i].transform.position);
@@ -54,10 +54,10 @@ public class MarkerManager : MonoBehaviour {
 		}
 	}
 
-	private int findIndexOfFirstMarker(List<GameObject> markers){
+	private int findIndexOfFirstMarker(List<Marker> markers){
 		int index = 0;
 		for (int i = 0; i < markers.Count; i++) {
-			if (markers [i].name.Equals (firstMarkerName)) {
+			if (markers [i].isFirst()) {
 				index = i;
 				break;
 			}
@@ -66,7 +66,7 @@ public class MarkerManager : MonoBehaviour {
 		return index;
 	}
 
-	private int findIndexOfMarkerWithSmallestDistance(List<GameObject> markers, GameObject relativeMarker){
+	private int findIndexOfMarkerWithSmallestDistance(List<Marker> markers, Marker relativeMarker){
 		int smallestDistanceIndex = 0;
 		float smallestDistance = float.MaxValue;
 
@@ -81,8 +81,8 @@ public class MarkerManager : MonoBehaviour {
 		return smallestDistanceIndex;
 	}
 
-	private List<GameObject> orderMarkers(List<GameObject> markers){
-		List<GameObject> markersOrdered = new List<GameObject> ();
+	private List<Marker> orderMarkers(List<Marker> markers){
+		List<Marker> markersOrdered = new List<Marker> ();
 
 		int indexOfFirstMarker = findIndexOfFirstMarker (markers);
 		markersOrdered.Add (markers[indexOfFirstMarker]);
@@ -100,15 +100,24 @@ public class MarkerManager : MonoBehaviour {
 		return markersOrdered;
 	}
 
-	private List<GameObject> getMarkers(GameObject root){
-		List<GameObject> list = new List<GameObject> ();
+	private List<Marker> getMarkers(GameObject root){
+		List<Marker> list = new List<Marker> ();
 		if (root.name.Contains ("marker"))
-			list.Add (root);
+			list.Add (root.GetComponent<Marker>());
 		else {
 			for (int i = 0; i < root.transform.childCount; i++) {
 				list.AddRange(getMarkers (root.transform.GetChild (i).gameObject));
 			}
 		}
 		return list;
+	}
+
+	private List<Marker> calculateSpeed(List<Marker> markers){
+
+		for (int i = 0; i < markers.Count; i++) {
+			markers [i].setSpeed (1f);
+		}
+
+		return markers;
 	}
 }
