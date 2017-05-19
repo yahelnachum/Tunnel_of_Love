@@ -11,14 +11,16 @@ public class Boat : MonoBehaviour {
 	void Start () {
 		manager = GameObject.Find ("MarkerManager").GetComponent<MarkerManager> ();
 		for (int i = 0; i < 30; i++) {
-			slowdownSpeedChangeQueue.Enqueue (1f);
+			slowdownSpeedChangeQueue.Enqueue (flatSpeed);
 		}
 	}
 	
 
 	private static Marker nextMarker = null;
 	private static Marker previousMarker = null;
-	private const float speed = 0.05f;
+	private const float flatSpeed = 0.05f;
+	private const float downwardSpeed = 0.1f;
+	private const float upwardSpeed = 0.01f;
 	private bool move = false;
 	private bool beforeHalfway = true;
 	private Queue<float> slowdownSpeedChangeQueue = new Queue<float> ();
@@ -35,14 +37,14 @@ public class Boat : MonoBehaviour {
 
 			float speedUpDown = 0f;
 			if (transform.rotation.eulerAngles.x < 90f) {
-				speedUpDown = (1f - transform.rotation.eulerAngles.x / 45f) * 0.75f + 0.25f;
+				speedUpDown = (1f - transform.rotation.eulerAngles.x / 45f) * (flatSpeed - upwardSpeed) + upwardSpeed;
 			} else {
-				speedUpDown = (1f - ((transform.rotation.eulerAngles.x - (360f - 45f)) / 45f)) * 0.75f + 1f;
+				speedUpDown = (1f - ((transform.rotation.eulerAngles.x - (360f - 45f)) / 45f)) * (downwardSpeed - flatSpeed) + flatSpeed;
 			}
 
 			slowdownSpeedChangeQueue.Enqueue (speedUpDown);
 
-			Vector3 newBoatPosition = transform.position + (nextMarker.transform.position - previousMarker.transform.position).normalized * speed * slowdownSpeedChangeQueue.Dequeue();
+			Vector3 newBoatPosition = transform.position + (nextMarker.transform.position - previousMarker.transform.position).normalized * slowdownSpeedChangeQueue.Dequeue();
 
 			float interpolation = Vector3.Distance (newBoatPosition, previousMarker.transform.position) / Vector3.Distance (nextMarker.transform.position, previousMarker.transform.position);
 
