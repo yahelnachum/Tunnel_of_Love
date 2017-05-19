@@ -115,7 +115,9 @@ public class MarkerManager : MonoBehaviour {
 	private List<Marker> calculateSpeed(List<Marker> markers){
 
 		for (int i = 0; i < markers.Count; i++) {
-			markers [i].setSpeed (1f);
+			if (Mathf.Approximately (markers [i].getSpeed (), -1f)) {
+				markers [i].setSpeed (1f);
+			}
 		}
 
 		return markers;
